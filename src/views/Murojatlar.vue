@@ -64,8 +64,7 @@
 </template>
 
 <script>
-// Asinxron importlar
-const useToast = () => import('vue-toastification').then(module => module.useToast);
+import { useToast } from 'vue-toastification';
 
 export default {
   name: 'MurojatlarPage',
@@ -79,7 +78,7 @@ export default {
   async created() {
     this.email = localStorage.getItem('email');
     const accessToken = localStorage.getItem('accessToken');
-    const toast = await useToast(); // Asinxron import
+    const toast = useToast();
 
     if (!this.email || !accessToken) {
       toast.error('Siz tizimga kirmagansiz!');
