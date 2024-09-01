@@ -5,21 +5,18 @@ import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import 'animate.css'; // If you need animation
 
-// Dynamic imports for Swiper and Toast
-const SwiperComponent = () => import('swiper/vue').then(module => module.Swiper);
-const SwiperSlideComponent = () => import('swiper/vue').then(module => module.SwiperSlide);
-const Toast = () => import('vue-toastification').then(module => module.default);
+// Import Toast and CSS directly (no need for dynamic import here)
+import Toast, { POSITION } from 'vue-toastification';
+import 'vue-toastification/dist/index.css';
 
-// Import CSS for Swiper and Toast dynamically
-import('swiper/swiper-bundle.css');
-import('vue-toastification/dist/index.css');
+// Import Swiper components
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper-bundle.css';
 
-// Import POSITION from vue-toastification
-import { POSITION } from 'vue-toastification';
-
+// Create Vue app instance
 const app = createApp(App);
 
-// Use plugins dynamically
+// Use plugins
 app.use(router);
 app.use(ElementPlus);
 app.use(Toast, {
@@ -27,8 +24,9 @@ app.use(Toast, {
     timeout: 3000, // Toast notifications duration
 });
 
-// Register global Swiper components with dynamic imports
-app.component('MySwiper', SwiperComponent);
-app.component('MySwiperSlide', SwiperSlideComponent);
+// Register global Swiper components
+app.component('MySwiper', Swiper);
+app.component('MySwiperSlide', SwiperSlide);
 
+// Mount the app
 app.mount('#app');
