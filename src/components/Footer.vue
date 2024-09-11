@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 <a href="https://nurazizcommchj.pythonanywhere.com">Nurazizcom<a>. Barcha huquqlar himoyalangan</p>
+      <p>&copy; 2024 <a href="https://nurazizcommchj.pythonanywhere.com">Nurazizcom</a>. Barcha huquqlar himoyalangan</p>
     </div>
   </footer>
 </template>
