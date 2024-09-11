@@ -1,5 +1,5 @@
 <template>
-<section id="section1" class="section-container">
+  <section id="section1" class="section-container">
     <div class="container">
       <div class="section-content">
         <div class="section-text">
@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-</section>
+  </section>
   
   <section id="section2" class="section-container">
     <div class="container">
@@ -30,20 +30,14 @@
         </div>
       </div>
     </div>
-</section>
+  </section>
 </template>
 
 <script>
 import { useRouter } from 'vue-router'; // Vue Router'dan useRouter import qilamiz
-import { Swiper as SwiperComponent, SwiperSlide as SwiperSlideComponent } from 'swiper/vue';
-import 'swiper/swiper-bundle.css';
 
 export default {
   name: 'CarouselSection',
-  components: {
-    MySwiper: SwiperComponent,
-    MySwiperSlide: SwiperSlideComponent
-  },
   setup() {
     const router = useRouter(); // Vue Router'ni olish
 
@@ -137,10 +131,6 @@ export default {
 @media (max-width: 767px) {
   .section-content {
     flex-direction: column;
-  }
-
-  .section-text, .section-image {
-    flex: none;
   }
 }
 </style>
