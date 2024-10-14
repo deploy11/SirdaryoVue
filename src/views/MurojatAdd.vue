@@ -164,7 +164,7 @@ export default {
       const arizaTuriKril = this.arizaTurlari.find(turi => turi.code === this.selectedArizaTuri)?.labelKril;
 
       try {
-        const response = await fetch('https://sirdarya777.pythonanywhere.com/api/', {
+        const response = await fetch('https://sirdaryo-new-production.up.railway.app/api/', {
           method: 'POST',
           body: JSON.stringify({
             fish: this.fish,
